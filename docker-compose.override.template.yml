@@ -3,14 +3,19 @@ version: '3'
 services:
   api:
     ports:
-      - 8000:8000
+      - "8000:8000"
+  server:
+    ports:
+      - "8001:3000"
   web:
     ports:
-      - 3000:3000
+      - "3000:3000"
   db:
     ports:
-      - 5432:5432
+      - "5432:5432"
   nginx:
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
+    environment:
+      API_PROXY_TARGET: "server:3000"

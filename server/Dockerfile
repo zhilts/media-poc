@@ -8,4 +8,4 @@ ENV NODE_ENV development
 EXPOSE 3000
 COPY ./package.json ./yarn.lock ${APP_DIR}
 RUN yarn install
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
